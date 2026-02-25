@@ -1,136 +1,72 @@
-\# Reducing Patient No-Show Rates – Healthcare Analytics Project
+# Reducing Patient No-Show Rates – Healthcare Analytics Project
 
+## 📌 Problem Statement
+~20% of medical appointments result in no-shows, reducing provider utilization and disrupting scheduling efficiency.
 
-
-\## Business Problem
-
-Approximately 20% of scheduled appointments result in no-shows, reducing provider utilization, disrupting scheduling workflows, and impacting operational efficiency.
-
-
-
-\## Objective
-
-Identify key drivers of appointment no-shows and develop a simple risk segmentation framework to enable targeted intervention strategies.
-
-
+## 🎯 Objective
+Identify drivers of appointment no-shows and design a simple, actionable risk segmentation framework to support reminder and intervention strategies.
 
 ---
 
-
-
-\## Dataset
-
-\- 110,000+ appointment records
-
-\- Multi-specialty hospital scheduling data
-
-\- Features include demographic, clinical, scheduling, and reminder information
-
-
+## 📊 Dataset
+- 110,000+ appointment records
+- Patient demographics
+- Chronic condition indicators
+- SMS reminder data
+- Scheduling timestamps
 
 ---
 
-
-
-\## Data Preparation
-
-\- Standardized column names
-
-\- Converted scheduling timestamps to datetime
-
-\- Engineered `lead\_time\_days`
-
-\- Removed logically invalid negative lead times
-
-\- Removed invalid age records
-
-\- Created binary `no\_show\_flag` (1 = No-show)
-
-
+## 🧹 Data Cleaning & Feature Engineering
+- Standardized column names
+- Converted scheduled/appointment timestamps to datetime
+- Engineered `lead_time_days`
+- Removed invalid negative lead times
+- Removed invalid ages (age < 0)
+- Created binary `no_show_flag`
 
 ---
 
+## 🔎 Key Insights
 
-
-\## Key Findings
-
-
-
-\### 1. Lead Time is the Strongest Driver
-
-No-show risk increases significantly with scheduling delay:
-
-\- 0–1 days: 6.6%
-
-\- 30+ days: 33.0%
-
-
-
-\### 2. Younger Patients Have Higher Risk
-
-Patients aged 18–35 show ~23.8% no-show rate compared to ~15–16% among older patients.
-
-
-
-\### 3. SMS Reminders Reduce Risk for Long Lead Times
-
-While aggregate analysis suggested higher no-show rates among SMS recipients, stratified analysis showed a 6–7 percentage point reduction for appointments scheduled 15+ days in advance.
-
-
-
-\### 4. Rule-Based Risk Segmentation
-
-A simple operational rule:
-
-\- Lead time > 14 days
-
-\- Age < 35
-
-\- No chronic condition
-
-
-
-Identified a cohort with:
-
-\- 37.7% no-show rate vs 17.9% baseline
-
-
+- No-show risk increases sharply with lead time:
+  - **6.6% (0–1 days)** → **33.0% (30+ days)**
+- Younger patients (18–35) show higher no-show rates (~23.8%)
+- SMS reminders reduce no-shows by ~6–7 percentage points for long lead-time bookings
+- A rule-based high-risk segment shows **~37.7% no-show rate vs ~17.9% baseline**
 
 ---
 
+## 📈 High-Risk vs Normal Segment
 
-
-\## Business Recommendations
-
-\- Implement targeted reminder escalation for high-risk segment
-
-\- Apply controlled overbooking for long lead-time slots
-
-\- Introduce 48-hour confirmation workflow for flagged patients
-
-
+![High Risk vs Normal](images/high_risk_vs_normal.png)
 
 ---
 
+## 💡 Business Recommendation
+Prioritize intervention workflows for:
+- Long lead-time bookings
+- Younger patients
+- Non-chronic condition patients
 
-
-\## Tools Used
-
-\- Python
-
-\- Pandas
-
-\- Matplotlib
-
-\- Jupyter Notebook
-
-
+Implement reminder escalation and confirmation-based scheduling.
 
 ---
 
+## 🛠 Tools Used
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Jupyter Notebook
+- Git / GitHub
 
+---
 
-\## Outcome
+## 📁 Repository Structure
 
-Developed an actionable risk segmentation framework enabling data-driven intervention strategies to improve provider utilization.
+---
 
+## 👩‍💻 Author
+Dhanashree Badgujar  
+Data Analytics | Healthcare Analytics | Python
